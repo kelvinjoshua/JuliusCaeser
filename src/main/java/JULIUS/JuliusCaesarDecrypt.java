@@ -23,15 +23,15 @@ public class JuliusCaesarDecrypt {
                 if (Character.isUpperCase(someLetter)) {
 
                     char assign = (char) (someLetter + ShiftValue);
-                    if (assign > 'A') {
-                        encryptedMessage += (char) (someLetter - (26 - ShiftValue));
+                    if (assign < 'A') {
+                        encryptedMessage += (char) (someLetter + (26 - ShiftValue));
                     } else {
                         encryptedMessage += assign;
                     }
                 } else if (Character.isLowerCase(someLetter)) {
                     char assign = (char) (someLetter + ShiftValue);
-                    if (assign > 'a') {
-                        encryptedMessage += (char) (someLetter - (26 - ShiftValue));
+                    if (assign <'a') {
+                        encryptedMessage += (char) (someLetter +(26 - ShiftValue));
                     } else {
                         encryptedMessage += assign;
                     }

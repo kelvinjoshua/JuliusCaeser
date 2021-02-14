@@ -1,4 +1,5 @@
 import JULIUS.JuliusCaeser;
+import JULIUS.JuliusCaesarDecrypt;
 
 import java.io.Console;
 public class App {
@@ -15,7 +16,19 @@ public class App {
         int primDigit = convDigit;
         JuliusCaeser conversion = new JuliusCaeser();
         String storedReturn = conversion.JuliusCaeser(message,primDigit);
-        System.out.println("The encrypted text is: "+storedReturn);
+        System.out.println("The encrypted text is: "+ storedReturn);
+        System.out.println("-*-*-*-*-*-*-*-*-*-*-*-");
+
+
+        /*store the key in this variable for subsequent method*/
+        int key =conversion.getShiftValue();
+       JuliusCaesarDecrypt reversion = new JuliusCaesarDecrypt();
+       String revertReturn = reversion.JuliusCaeserDecrypt(storedReturn,key);
+       System.out.println(" The decrypted message is: " + revertReturn);
+        //System.out.println(storedReturn);
+       // System.out.println(key);
+        // System.out.println(conversion.getInput());
+
 
 
     }
