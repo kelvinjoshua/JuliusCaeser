@@ -2,7 +2,7 @@ package JULIUS;
 
 public class JuliusCaeser {
     /*leave as primitives*/
-    private String decryptedMessage = "";
+    private String encryptedMessage = "";
     private int ShiftValue;
     private String input;
     /*constructor*/
@@ -25,31 +25,31 @@ public class JuliusCaeser {
                 /*co-erce to store value in a char variable*/
                 char assign = (char)(someLetter+ShiftValue);
                 if(assign>'Z'){
-                    decryptedMessage += decryptedMessage+(char)(someLetter-(26-ShiftValue));
+                    encryptedMessage += (char)(someLetter-(26-ShiftValue));
                 }
                 else{
-                    decryptedMessage += decryptedMessage + assign;
+                    encryptedMessage += assign;
                 }
             }
 
             else if(Character.isLowerCase(someLetter)){
                 char assign = (char)(someLetter+ShiftValue);
                 if(assign>'z'){
-                    decryptedMessage +=decryptedMessage+(char)(someLetter-(26-ShiftValue));
+                    encryptedMessage +=(char)(someLetter-(26-ShiftValue));
                 }
                 else{
-                    decryptedMessage += decryptedMessage+assign;
+                    encryptedMessage += assign;
                 }
 
             }
             else{
-                decryptedMessage = decryptedMessage +someLetter;
+                encryptedMessage += someLetter;
             }
         }
     }
 
 
-       return decryptedMessage;
+       return encryptedMessage;
     }
 
 public int getShiftValue(){

@@ -2,7 +2,7 @@ package JULIUS;
 
 public class JuliusCaesarDecrypt {
 
-    private String encryptedMessage = "";
+    private String decryptedMessage = "";
     private int ShiftValue;
     private String input;
 
@@ -22,29 +22,30 @@ public class JuliusCaesarDecrypt {
 
                 if (Character.isUpperCase(someLetter)) {
 
-                    char assign = (char) (someLetter + ShiftValue);
+                    char assign = (char)(someLetter - ShiftValue);
                     if (assign < 'A') {
-                        encryptedMessage += (char) (someLetter + (26 - ShiftValue));
+                        decryptedMessage += (char) (someLetter + (26 - ShiftValue));
                     } else {
-                        encryptedMessage += assign;
+                        decryptedMessage += assign;
                     }
                 } else if (Character.isLowerCase(someLetter)) {
                     char assign = (char) (someLetter + ShiftValue);
                     if (assign <'a') {
-                        encryptedMessage += (char) (someLetter +(26 - ShiftValue));
+                        decryptedMessage += (char) (someLetter +(26 - ShiftValue));
                     } else {
-                        encryptedMessage += assign;
+                        decryptedMessage += assign;
                     }
 
-                } else {
-                    encryptedMessage = encryptedMessage + someLetter;
+                }
+                else {
+                    decryptedMessage  += someLetter;
                 }
             }
         }
 
-
-        return encryptedMessage;
+        return decryptedMessage;
     }
+
     public int getShiftValue(){
         return this.ShiftValue;
     }
