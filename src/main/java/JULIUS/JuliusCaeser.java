@@ -1,12 +1,12 @@
 package JULIUS;
 
-public class juliusCaeser {
+public class JuliusCaeser {
     /*leave as primitives*/
     private String encryptedMessage = "";
     private int ShiftValue;
     private String input;
     /*constructor*/
-    public String juliusCaeser(String input, int ShiftValue){
+    public String JuliusCaeser(String input, int ShiftValue){
         this.input= input;
         this.ShiftValue= ShiftValue;
     /* value range fixed between 0 and 23*/
@@ -25,7 +25,7 @@ public class juliusCaeser {
                 /*co-erce to store value in a char variable*/
                 char assign = (char)(someLetter+ShiftValue);
                 if(assign>'Z'){
-                    encryptedMessage +=(char)(someLetter-(26-ShiftValue));
+                    encryptedMessage += (char)(someLetter-(26-ShiftValue));
                 }
                 else{
                     encryptedMessage += assign;

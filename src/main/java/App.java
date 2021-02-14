@@ -1,4 +1,5 @@
-package JULIUS;
+import JULIUS.JuliusCaeser;
+
 import java.io.Console;
 public class App {
     public static void main(String[] args){
@@ -9,6 +10,10 @@ public class App {
         System.out.println("Enter the shift value");
         String digit = terminal.readLine();
 
+        Integer convDigit = Integer.parseInt(digit);
+        int primDigit = convDigit;
+        JuliusCaeser conversion = new JuliusCaeser();
+        System.out.println("The encrypted text is: "+conversion.JuliusCaeser(message,primDigit));
 
     }
 }

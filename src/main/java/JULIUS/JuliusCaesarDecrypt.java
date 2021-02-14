@@ -1,12 +1,12 @@
 package JULIUS;
 
-public class juliusCaesarDecrypt {
+public class JuliusCaesarDecrypt {
 
     private String encryptedMessage = "";
     private int ShiftValue;
     private String input;
 
-    public String juliusCaeserDecrypt(String input, int ShiftValue) {
+    public String JuliusCaeserDecrypt(String input, int ShiftValue) {
         this.input = input;
         this.ShiftValue = ShiftValue;
 
