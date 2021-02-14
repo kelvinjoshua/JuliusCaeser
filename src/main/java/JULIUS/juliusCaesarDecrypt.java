@@ -23,7 +23,7 @@ public class juliusCaesarDecrypt {
                 if (Character.isUpperCase(someLetter)) {
 
                     char assign = (char) (someLetter + ShiftValue);
-                    if (assign > 'Z') {
+                    if (assign > 'A') {
                         encryptedMessage += (char) (someLetter - (26 - ShiftValue));
                     } else {
                         encryptedMessage += assign;
