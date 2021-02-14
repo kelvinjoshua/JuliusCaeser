@@ -13,7 +13,7 @@ public class juliusCaeser {
     if(ShiftValue >26){
         ShiftValue= ShiftValue%26;
     }
-    else {
+    else if(ShiftValue<0) {
         ShiftValue= (ShiftValue%26) +26;
     }
     for(int i=0;i<input.length();i++){
@@ -31,21 +31,32 @@ public class juliusCaeser {
                     encryptedMessage += assign;
                 }
             }
+
+            else if(Character.isLowerCase(someLetter)){
+                char assign = (char)(someLetter+ShiftValue);
+                if(assign>'z'){
+                    encryptedMessage +=(char)(someLetter-(26-ShiftValue));
+                }
+                else{
+                    encryptedMessage += assign;
+                }
+
+            }
+            else{
+                encryptedMessage = encryptedMessage +someLetter;
+            }
         }
     }
-
-
-
-
-
-
-
-
-
 
 
        return encryptedMessage;
     }
 
+public int getShiftValue(){
+        return this.ShiftValue;
+}
 
+public String getInput(){
+        return this.input;
+}
 }
