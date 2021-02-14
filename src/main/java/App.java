@@ -11,9 +11,12 @@ public class App {
         String digit = terminal.readLine();
 
         Integer convDigit = Integer.parseInt(digit);
+        /* save as primitive to pass as argument*/
         int primDigit = convDigit;
         JuliusCaeser conversion = new JuliusCaeser();
-        System.out.println("The encrypted text is: "+conversion.JuliusCaeser(message,primDigit));
+        String storedReturn = conversion.JuliusCaeser(message,primDigit);
+        System.out.println("The encrypted text is: "+storedReturn);
+
 
     }
 }
