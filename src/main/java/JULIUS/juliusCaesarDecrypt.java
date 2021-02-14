@@ -30,7 +30,7 @@ public class juliusCaesarDecrypt {
                     }
                 } else if (Character.isLowerCase(someLetter)) {
                     char assign = (char) (someLetter + ShiftValue);
-                    if (assign > 'z') {
+                    if (assign > 'a') {
                         encryptedMessage += (char) (someLetter - (26 - ShiftValue));
                     } else {
                         encryptedMessage += assign;
